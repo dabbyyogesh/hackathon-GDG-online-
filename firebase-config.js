@@ -1,3 +1,4 @@
+// firebase-config.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc, collection, getDocs, query, onSnapshot, orderBy, updateDoc, arrayUnion, where, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
