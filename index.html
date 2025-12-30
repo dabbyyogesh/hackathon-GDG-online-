@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Market: The Ultimate 2025 Edition</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, collection, getDocs, query, onSnapshot, orderBy, updateDoc, arrayUnion, where, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyAxU7VpzhQUnMQ1N_pGUjFA4kZmffVS7ck",
+          authDomain: "service-a0a29.firebaseapp.com",
+          projectId: "service-a0a29",
+          storageBucket: "service-a0a29.firebasestorage.app",
+          messagingSenderId: "1014022373726",
+          appId: "1:1014022373726:web:0a261a7a13325c2ac84fcf",
+          measurementId: "G-GD4514XSQ2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        
+        // We attach these to the window object so script.js can access them
+        window.auth = getAuth(app);
+        window.db = getFirestore(app);
+        window.fb = { 
+            signInWithEmailAndPassword, 
+            createUserWithEmailAndPassword, 
+            onAuthStateChanged, 
+            signOut, 
+            doc, 
+            setDoc, 
+            getDoc, 
+            collection, 
+            getDocs, 
+            query, 
+            onSnapshot, 
+            orderBy, 
+            updateDoc, 
+            arrayUnion, 
+            where, 
+            addDoc 
+        };
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+
+    <script type="text/babel" src="script.js"></script>
+</body>
+</html>
