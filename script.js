@@ -1,3 +1,22 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc, collection, getDocs, query, onSnapshot, orderBy, updateDoc, arrayUnion, where, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAxU7VpzhQUnMQ1N_pGUjFA4kZmffVS7ck",
+  authDomain: "service-a0a29.firebaseapp.com",
+  projectId: "service-a0a29",
+  storageBucket: "service-a0a29.firebasestorage.app",
+  messagingSenderId: "1014022373726",
+  appId: "1:1014022373726:web:0a261a7a13325c2ac84fcf",
+  measurementId: "G-GD4514XSQ2"
+};
+
+const app = initializeApp(firebaseConfig);
+window.auth = getAuth(app);
+window.db = getFirestore(app);
+window.fb = { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, doc, setDoc, getDoc, collection, getDocs, query, onSnapshot, orderBy, updateDoc, arrayUnion, where, addDoc };
+
 const { useState, useEffect, useMemo, useRef } = React;
 
 const CATEGORIES = ["All", "Technical", "Home Services", "Creative", "Health"];
@@ -381,7 +400,7 @@ function AuctionCenter({ user, role, setNotifications }) {
                             )
                         ) : (
                             <div className="p-8 rounded-[2.5rem] border-2 text-center uppercase font-black text-sm italic border-indigo-200 bg-indigo-50 text-indigo-600">
-                                {auc.status === 'closed' ? "In Progress - Winner assigned" : "Mission Accomplished"}
+                                    {auc.status === 'closed' ? "In Progress - Winner assigned" : "Mission Accomplished"}
                             </div>
                         )}
                         {auc.status === 'completed' && role === 'user' && auc.owner === user.uid && !auc.review && (
