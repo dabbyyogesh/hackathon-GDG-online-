@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    scroll-behavior: smooth; 
+}
+
+.no-scrollbar::-webkit-scrollbar { 
+    display: none; 
+}
+
+@keyframes pulse-red { 
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); } 
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } 
+}
+
+.notify-pulse { 
+    animation: pulse-red 2s infinite; 
+}
